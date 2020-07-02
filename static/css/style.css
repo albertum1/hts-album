@@ -1,0 +1,30 @@
+#container-fluid .wrap {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    position: absolute;
+}
+
+#table {
+    width: 100%;
+}
+
+.wrap {
+	background:#f9f9f9;
+    margin:auto;
+}
+
+#version-number {
+    font-size: .5em;
+  }
+
+
+body {
+	background: #DCDCDC;
+	font-family: 'Arial', sans-serif;
+}
+
+#about {
+    float: left;
+    font-size: .9em;
+  }

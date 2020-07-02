@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Online HTS JSON lookup</title>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <link rel="stylesheet" href="static/css/style.css">
+
+   <!-- Global site tag (gtag.js) - Google Analytics -->
+   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-160515972-1"></script>
+   <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-160515972-1');
+   </script>
+  
+   </head>
+
+   <body>
+      <br>
+      <nav class="navbar navbar-light bg-light">
+
+         <h1>HTS JSON lookup <span id="version-number">(2020 revision 14)</span></h1>
+         <div id="about">
+            <p>Tool to decipher HTS code by:</p>
+               <ol start="1">
+               <li>Locate "searched" HTS number and it's parents. (indicated by indent)</li>
+               </ol>
+               <ol start="2">
+               <li>If footnotes from step 1 direct users to another HTS code, locate directed figure.</li>
+               </ol>
+               <ol start="3">
+               <li>If figure from step 2 guides user to a note for exclusions, locate the exclusions from note that matches the "searched" HTS number.</li>
+               </ol>
+            <p>try 6307.90.9889, 3926909990 or 4202.92.31.31</p>   
+          </div>
+       </nav>
+
+      
+      
+
+      <br>
+
+      <div class="container-fluid wrap">
+         
+      
+
+        <br>
+         <input type="text" id="myInput">
+         <button type="button" id="myBtn">Search</button>
+         <div class ="table-responsive w-auto">
+            <br />
+            <table class="table table-condensed table-striped" id="employee_table">
+               <tr>
+                  <th>htsno</th>
+                  <th>indent</th>
+                  <th>description</th>
+                  <th>unitofquantity</th>
+                  <th>general</th>
+                  <th>special</th>
+                  <th>other</th>
+                  <th>footnotes</th>
+               </tr>
+            </table>
+            <table class="table table-condensed table-striped" id="exclusions">
+               <tr>
+                  <th>htsno</th>
+                  <th>exclusion</th>
+                  <th>note</th>
+               </tr>
+            </table>
+         </div>
+      </div>
+      <script src="static/js/jquery-3.4.1.js"></script>
+      <script src="static/js/script.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+   </body>
+</html>
