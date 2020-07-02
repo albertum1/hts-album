@@ -51,7 +51,7 @@ var arr = null;
 $.ajax({
     'async': false,
     'global': false,
-    'url': "./hts_2020_revision_12_json.json",
+    'url': "./hts_2020_revision_14_json.json",
     'dataType': "json",
     'success': function(data) {
         arr = data;
