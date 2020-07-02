@@ -7,6 +7,7 @@ function removeDuplicates(array) {
     })
     return Object.keys(x)
 };
+// helper function to reduce '.'
 String.prototype.commafy = function() {
     return this.replace(/(^|[^\w.])(\d{4,})/g, function($0, $1, $2) {
         return $1 + $2.replace(/\d(?=(?:\d\d)+(?!\d))/g, "$&.");
@@ -70,16 +71,22 @@ $(document).ready(function() {
         $('#exclusions tr').not(function() {
             return !!$(this).has('th').length;
         }).remove();
+        // If Input length is 0 input becomes 'Empty'
+        // var str will be INPUT
         var str = $("#myInput").val();
         if (str.length == 0) {
             str = "Empty";
         }
+        // apply helper function to remove '.';
         str = str.replace(/\./g, '').commafy()
+        // I don't know why this is here.
         if (str[2] == '.') {
             str = str.slice(0, 2) + str.slice(3);
         }
+        // jsonrev is the given hts json file REVERSED;
 
         for (var i in jsonrev) {
+            // if input matches an htsno in json file return outputs;
             if (jsonrev[i].htsno == str) {
                 var newlist = [jsonrev[i]];
                 var indented = jsonrev[i].indent;
